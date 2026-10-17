@@ -1,0 +1,23 @@
+name: Box
+version: '${project.version}'
+main: fr.sparta.box.BoxPlugin
+api-version: '1.21'
+author: Sparta
+description: Box a cles posees sur des blocs, facon ExcellentCrates.
+
+commands:
+  box:
+    description: Gestion des box.
+    aliases: [caisse, crate]
+    usage: /box help
+
+permissions:
+  box.open:
+    description: Ouvrir les box et voir leur apercu.
+    default: true
+  box.keys:
+    description: Voir ses propres cles virtuelles.
+    default: true
+  box.admin:
+    description: Creer, placer, editer les box et donner des cles.
+    default: op

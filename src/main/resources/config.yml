@@ -1,0 +1,96 @@
+# ==========================================================
+#  Box - configuration generale
+#  Les box elles-memes sont dans le dossier crates/ (un fichier par box).
+#  Tous les textes utilisent MiniMessage : https://docs.advntr.dev/minimessage/format
+# ==========================================================
+
+# Distance max (en blocs) du bloc vise pour /box set et /box remove.
+target-distance: 6
+
+# Le clic gauche sur une box ouvre l'apercu des recompenses.
+preview-on-left-click: true
+
+# Accroupi + clic droit = ouverture instantanee (sans animation).
+sneak-skips-animation: true
+
+# Animation de la roulette : nombre de defilements avant de s'arreter.
+roulette-steps: 40
+
+prefix: "<dark_gray>[<gold>Box</gold>]</dark_gray> "
+
+messages:
+  no-permission: "<red>Tu n'as pas la permission."
+  player-only: "<red>Commande reservee aux joueurs."
+  player-not-found: "<red>Joueur introuvable : <white><player></white>."
+  unknown-box: "<red>Box inconnue : <white><box></white>."
+  invalid-number: "<red>Nombre invalide : <white><value></white>."
+  reloaded: "<green>Configuration et box rechargees."
+
+  box-created: "<green>Box <white><box></white> creee. Vise un bloc et fais <white>/box set <box></white>."
+  box-exists: "<red>La box <white><box></white> existe deja."
+  box-invalid-id: "<red>Identifiant invalide (lettres minuscules, chiffres, - et _ uniquement)."
+  box-deleted: "<green>Box <white><box></white> supprimee."
+  box-list-header: "<gold>Box (<count>) :"
+  box-list-entry: "<dark_gray>- <white><box></white> <gray>(<name><gray>) - <yellow><rewards></yellow> recompenses, <yellow><locations></yellow> emplacements"
+
+  no-target-block: "<red>Vise un bloc (a <distance> blocs max)."
+  block-set: "<green>Ce bloc est maintenant la box <white><box></white>."
+  block-already-box: "<red>Ce bloc est deja la box <white><box></white>. Fais d'abord <white>/box remove</white>."
+  block-removed: "<green>Ce bloc n'est plus la box <white><box></white>."
+  block-not-box: "<red>Ce bloc n'est pas une box."
+  block-protected: "<red>Ce bloc est une box. Utilise <white>/box remove</white> pour la retirer."
+
+  reward-added: "<green>Recompense ajoutee a <white><box></white> (poids <yellow><weight></yellow>)."
+  reward-hand-empty: "<red>Tiens l'objet a ajouter dans ta main."
+
+  key-given: "<green><amount> cle(s) <white><box></white> (<type>) donnee(s) a <white><player></white>."
+  key-received: "<green>Tu as recu <yellow><amount></yellow> cle(s) <white><box></white>."
+  key-taken: "<green><amount> cle(s) virtuelle(s) <white><box></white> retiree(s) a <white><player></white>."
+  keys-header: "<gold>Cles virtuelles de <white><player></white> :"
+  keys-entry: "<dark_gray>- <white><name></white><gray> : <yellow><amount>"
+  keys-none: "<gray>Aucune cle virtuelle."
+
+  no-key: "<red>Il te faut une cle <white><box></white> pour ouvrir cette box."
+  no-rewards: "<red>Cette box n'a aucune recompense pour l'instant."
+  cooldown: "<red>Patiente encore <white><time></white> avant de rouvrir cette box."
+  already-opening: "<red>Tu ouvres deja une box."
+  win: "<green>Tu as gagne <white><reward></white> <green>!"
+  broadcast: "<gold><player></gold> <yellow>a gagne <white><reward></white> <yellow>dans la box <white><box></white> <yellow>!"
+
+  help:
+    - "<gold>/box create <id></gold> <gray>- creer une box"
+    - "<gold>/box delete <id></gold> <gray>- supprimer une box"
+    - "<gold>/box list</gold> <gray>- lister les box"
+    - "<gold>/box set <box></gold> <gray>- transformer le bloc vise en box"
+    - "<gold>/box remove</gold> <gray>- retirer la box du bloc vise"
+    - "<gold>/box edit <box></gold> <gray>- editeur des recompenses"
+    - "<gold>/box addreward <box> [poids]</gold> <gray>- ajouter l'objet en main"
+    - "<gold>/box preview <box> [joueur]</gold> <gray>- apercu des recompenses"
+    - "<gold>/box open <box> [joueur]</gold> <gray>- ouvrir gratuitement"
+    - "<gold>/box give <joueur|*> <box> [quantite] [virtuelle]</gold> <gray>- donner des cles"
+    - "<gold>/box take <joueur> <box> [quantite]</gold> <gray>- retirer des cles virtuelles"
+    - "<gold>/box keys [joueur]</gold> <gray>- voir les cles virtuelles"
+    - "<gold>/box reload</gold> <gray>- recharger"
+
+gui:
+  preview-title: "<dark_gray>Apercu : <box>"
+  editor-title: "<dark_gray>Editeur : <box>"
+  chance-line: "<gray>Chance : <yellow><chance>%"
+  previous: "<yellow>Page precedente"
+  next: "<yellow>Page suivante"
+  keys-info: "<gold>Tes cles"
+  keys-info-lore:
+    - "<gray>Virtuelles : <yellow><virtual>"
+    - "<gray>Physiques : <yellow><physical>"
+  editor-lore:
+    - "<gray>Poids : <yellow><weight></yellow> <dark_gray>(<chance>%)"
+    - "<gray>Diffusion : <yellow><broadcast>"
+    - ""
+    - "<yellow>Clic gauche</yellow> <gray>: +1  <yellow>Shift+gauche</yellow> <gray>: +10"
+    - "<yellow>Clic droit</yellow> <gray>: -1  <yellow>Shift+droit</yellow> <gray>: -10"
+    - "<yellow>Clic molette</yellow> <gray>: activer/couper la diffusion"
+    - "<red>Touche jeter (Q)</red> <gray>: supprimer"
+  editor-help: "<gold>Ajouter une recompense"
+  editor-help-lore:
+    - "<gray>Shift+clic sur un objet de ton inventaire"
+    - "<gray>pour l'ajouter (poids 10)."

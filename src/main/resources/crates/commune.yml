@@ -1,0 +1,74 @@
+# Box d'exemple. Copie ce fichier (ou fais /box create <id>) pour en creer d'autres.
+
+# Nom affiche (messages, titres de menus).
+name: "<green>Box Commune"
+
+hologram:
+  enabled: true
+  # Hauteur du texte au-dessus du bloc.
+  height: 1.25
+  lines:
+    - "<green><bold>Box Commune"
+    - "<gray>Clic droit : <white>ouvrir"
+    - "<gray>Clic gauche : <white>apercu"
+
+# Animation roulette a l'ouverture (false = recompense immediate).
+animation: true
+# Delai en secondes entre deux ouvertures pour un meme joueur (0 = aucun).
+cooldown: 0
+# Permission necessaire pour ouvrir (vide = box.open suffit).
+permission: ""
+# Repousse le joueur qui clique sans cle.
+push-back: true
+# Particules autour du bloc (nom Minecraft, vide = aucune). Ex : happy_villager, flame, end_rod, totem_of_undying
+particle: "happy_villager"
+
+# Cle physique de cette box.
+key:
+  material: TRIPWIRE_HOOK
+  name: "<green>Cle <white>Commune"
+  lore:
+    - "<gray>Clic droit sur une <green>Box Commune"
+    - "<gray>pour l'ouvrir."
+
+# Blocs ou la box est posee (gere par /box set et /box remove).
+locations: []
+
+# Recompenses. Chance = poids / somme des poids.
+#  - material/amount/item-name/lore/glint : objet decrit a la main
+#  - item : objet complet encode (ecrit par /box addreward ou l'editeur, garde enchantements, NBT...)
+#  - give-item : donner l'objet (false = il ne sert que d'icone, utile pour les recompenses en commande)
+#  - commands : commandes console, %player% = nom du joueur
+#  - broadcast : annoncer le gain a tout le serveur
+rewards:
+  pain:
+    name: "<yellow>16 Pains"
+    weight: 40
+    material: BREAD
+    amount: 16
+  fer:
+    name: "<white>8 Lingots de fer"
+    weight: 30
+    material: IRON_INGOT
+    amount: 8
+  or:
+    name: "<gold>5 Lingots d'or"
+    weight: 18
+    material: GOLD_INGOT
+    amount: 5
+  diamants:
+    name: "<aqua>3 Diamants"
+    weight: 9
+    material: DIAMOND
+    amount: 3
+    broadcast: true
+  argent:
+    name: "<green>1000 pieces"
+    weight: 3
+    material: EMERALD
+    item-name: "<green>1000 pieces"
+    glint: true
+    give-item: false
+    commands:
+      - "eco give %player% 1000"
+    broadcast: true
